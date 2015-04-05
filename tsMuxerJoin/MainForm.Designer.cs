@@ -36,7 +36,7 @@
             this.tip = new System.Windows.Forms.ToolTip(this.components);
             this.outputEdit = new System.Windows.Forms.TextBox();
             this.outputFile = new System.Windows.Forms.SaveFileDialog();
-            this.tsMuxeR = new System.Windows.Forms.OpenFileDialog();
+            this.muxerExe = new System.Windows.Forms.OpenFileDialog();
             this.previewButton = new System.Windows.Forms.Button();
             this.browseOutputButton = new System.Windows.Forms.Button();
             this.muxButton = new System.Windows.Forms.Button();
@@ -89,9 +89,9 @@
             // 
             // tsMuxeR
             // 
-            this.tsMuxeR.FileName = "tsMuxeR.exe";
-            this.tsMuxeR.Filter = "tsmuxer.exe|tsmuxer.exe|Executable file|*.exe";
-            this.tsMuxeR.Title = "Choose tsMuxer executable";
+            this.muxerExe.FileName = "tsMuxeR.exe";
+            this.muxerExe.Filter = "tsmuxer.exe|tsmuxer.exe|Executable file|*.exe";
+            this.muxerExe.Title = "Choose muxer executable";
             // 
             // previewButton
             // 
@@ -137,7 +137,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(440, 206);
             this.richTextBox1.TabIndex = 7;
             this.richTextBox1.TabStop = false;
-            this.richTextBox1.Rtf = Properties.Resources.rtfHelp;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // MainForm
             // 
@@ -166,7 +166,7 @@
         private System.Windows.Forms.FolderBrowserDialog chooseFolder;
         private System.Windows.Forms.ToolTip tip;
         private System.Windows.Forms.SaveFileDialog outputFile;
-        private System.Windows.Forms.OpenFileDialog tsMuxeR;
+        private System.Windows.Forms.OpenFileDialog muxerExe;
         private System.Windows.Forms.Button previewButton;
         private System.Windows.Forms.TextBox outputEdit;
         private System.Windows.Forms.Button browseOutputButton;
