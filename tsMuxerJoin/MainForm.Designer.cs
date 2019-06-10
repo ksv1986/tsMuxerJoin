@@ -45,105 +45,79 @@
             // 
             // directoryEdit
             // 
+            resources.ApplyResources(this.directoryEdit, "directoryEdit");
             this.directoryEdit.AllowDrop = true;
-            this.directoryEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.directoryEdit.Location = new System.Drawing.Point(12, 227);
             this.directoryEdit.Name = "directoryEdit";
-            this.directoryEdit.Size = new System.Drawing.Size(403, 20);
-            this.directoryEdit.TabIndex = 4;
             this.tip.SetToolTip(this.directoryEdit, global::tsMuxerJoin.Properties.Resources.chooseFolderHint);
             this.directoryEdit.DragDrop += new System.Windows.Forms.DragEventHandler(this.directory_DragDrop);
             this.directoryEdit.DragEnter += new System.Windows.Forms.DragEventHandler(this.directory_DragEnter);
             // 
             // browse
             // 
-            this.browse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.browse.Location = new System.Drawing.Point(421, 224);
+            resources.ApplyResources(this.browse, "browse");
             this.browse.Name = "browse";
-            this.browse.Size = new System.Drawing.Size(31, 23);
-            this.browse.TabIndex = 0;
-            this.browse.Text = "...";
+            this.tip.SetToolTip(this.browse, resources.GetString("browse.ToolTip"));
             this.browse.UseVisualStyleBackColor = true;
             this.browse.Click += new System.EventHandler(this.browse_Click);
             // 
             // chooseFolder
             // 
             this.chooseFolder.Description = global::tsMuxerJoin.Properties.Resources.chooseFolderHint;
+            resources.ApplyResources(this.chooseFolder, "chooseFolder");
             this.chooseFolder.ShowNewFolderButton = false;
             // 
             // outputEdit
             // 
-            this.outputEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.outputEdit.Location = new System.Drawing.Point(12, 257);
+            resources.ApplyResources(this.outputEdit, "outputEdit");
             this.outputEdit.Name = "outputEdit";
-            this.outputEdit.Size = new System.Drawing.Size(402, 20);
-            this.outputEdit.TabIndex = 5;
             this.tip.SetToolTip(this.outputEdit, global::tsMuxerJoin.Properties.Resources.chooseOutputHint);
             // 
             // outputFile
             // 
-            this.outputFile.Filter = "M2TS Files|*.m2ts|All files|*.*";
+            resources.ApplyResources(this.outputFile, "outputFile");
             this.outputFile.Title = global::tsMuxerJoin.Properties.Resources.chooseOutputHint;
             // 
-            // tsMuxeR
+            // muxerExe
             // 
             this.muxerExe.FileName = "tsMuxeR.exe";
-            this.muxerExe.Filter = "tsmuxer.exe|tsmuxer.exe|Executable file|*.exe";
-            this.muxerExe.Title = "Choose muxer executable";
+            resources.ApplyResources(this.muxerExe, "muxerExe");
             // 
             // previewButton
             // 
-            this.previewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.previewButton.Location = new System.Drawing.Point(356, 284);
+            resources.ApplyResources(this.previewButton, "previewButton");
             this.previewButton.Name = "previewButton";
-            this.previewButton.Size = new System.Drawing.Size(96, 23);
-            this.previewButton.TabIndex = 3;
-            this.previewButton.Text = "Preview";
+            this.tip.SetToolTip(this.previewButton, resources.GetString("previewButton.ToolTip"));
             this.previewButton.UseVisualStyleBackColor = true;
             this.previewButton.Click += new System.EventHandler(this.preview_Click);
             // 
             // browseOutputButton
             // 
-            this.browseOutputButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.browseOutputButton.Location = new System.Drawing.Point(421, 254);
+            resources.ApplyResources(this.browseOutputButton, "browseOutputButton");
             this.browseOutputButton.Name = "browseOutputButton";
-            this.browseOutputButton.Size = new System.Drawing.Size(31, 23);
-            this.browseOutputButton.TabIndex = 1;
-            this.browseOutputButton.Text = "...";
+            this.tip.SetToolTip(this.browseOutputButton, resources.GetString("browseOutputButton.ToolTip"));
             this.browseOutputButton.UseVisualStyleBackColor = true;
             this.browseOutputButton.Click += new System.EventHandler(this.browseOutputButton_Click);
             // 
             // muxButton
             // 
-            this.muxButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.muxButton.Location = new System.Drawing.Point(13, 284);
+            resources.ApplyResources(this.muxButton, "muxButton");
             this.muxButton.Name = "muxButton";
-            this.muxButton.Size = new System.Drawing.Size(96, 23);
-            this.muxButton.TabIndex = 2;
-            this.muxButton.Text = "Mux";
+            this.tip.SetToolTip(this.muxButton, resources.GetString("muxButton.ToolTip"));
             this.muxButton.UseVisualStyleBackColor = true;
             this.muxButton.Click += new System.EventHandler(this.mux_Click);
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(440, 206);
-            this.richTextBox1.TabIndex = 7;
             this.richTextBox1.TabStop = false;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.tip.SetToolTip(this.richTextBox1, resources.GetString("richTextBox1.ToolTip"));
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 319);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.muxButton);
             this.Controls.Add(this.browseOutputButton);
@@ -151,9 +125,8 @@
             this.Controls.Add(this.previewButton);
             this.Controls.Add(this.browse);
             this.Controls.Add(this.directoryEdit);
-            this.MinimumSize = new System.Drawing.Size(244, 38);
             this.Name = "MainForm";
-            this.Text = "tsMuxerJoin";
+            this.tip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -27,6 +27,7 @@ namespace tsMuxerJoin
             InitializeComponent();
             Win32Utility.SetCueText(directoryEdit, Properties.Resources.chooseFolderHint);
             Win32Utility.SetCueText(outputEdit,    Properties.Resources.chooseOutputHint);
+            richTextBox1.Rtf = Properties.Resources.rtfHelp;
             if (args.Length > 0)
                 setSourceDirectory(args[0]);
         }
