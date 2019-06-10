@@ -112,16 +112,28 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="chooseFolderHint" xml:space="preserve">
     <value>Select a folder with .mts files</value>
   </data>
   <data name="chooseOutputHint" xml:space="preserve">
     <value>Select output file name</value>
+  </data>
+  <data name="dirHasNoSupportedFiles" xml:space="preserve">
+    <value>Selected directory doesn't have supported files</value>
+  </data>
+  <data name="exeHint" xml:space="preserve">
+    <value>Executable file</value>
+  </data>
+  <data name="muxerExecFailed" xml:space="preserve">
+    <value>Failed to launch muxer process</value>
+  </data>
+  <data name="muxerFailed" xml:space="preserve">
+    <value>Muxer process exited with code {0}</value>
   </data>
   <data name="rtfHelp" xml:space="preserve">
     <value>{\rtf1\ansi\f0\pard

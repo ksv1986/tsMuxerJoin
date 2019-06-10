@@ -41,7 +41,7 @@ namespace tsMuxerJoin
 
         public string ExeFilter
         {
-            get { return ExeName + "|" + ExeName + "|Executable file|*.exe"; }
+            get { return ExeName + "|" + ExeName + "|" + Properties.Resources.exeHint + "|*.exe"; }
         }
 
         public static Muxer GetMuxer()

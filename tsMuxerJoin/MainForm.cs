@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -36,7 +35,7 @@ namespace tsMuxerJoin
         {
             if (Utils.GetSourceFiles(dir, extension).Length == 0)
             {
-                if (MessageBox.Show("Selected directory doesn't have supported files", this.Name, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation) == DialogResult.Retry)
+                if (MessageBox.Show(Properties.Resources.dirHasNoSupportedFiles, this.Name, MessageBoxButtons.RetryCancel, MessageBoxIcon.Exclamation) == DialogResult.Retry)
                     return browseFolder();
                 return false;
             }
@@ -109,7 +108,7 @@ namespace tsMuxerJoin
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Failed to launch tsMuxer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, Properties.Resources.muxerExecFailed, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -117,7 +116,7 @@ namespace tsMuxerJoin
         {
             Process muxer = sender as Process;
             if (muxer.ExitCode != 0)
-                MessageBox.Show(String.Format("Muxer process exited with code {0}", muxer.ExitCode), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(String.Format(Properties.Resources.muxerFailed, muxer.ExitCode), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 Process.Start("explorer.exe", "/select," + output.DoubleQuote());
         }
