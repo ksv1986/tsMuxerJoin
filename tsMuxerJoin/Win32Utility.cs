@@ -27,11 +27,8 @@ using System.Text;
 public static class Win32Utility
 {
     [DllImport("user32.dll", CharSet = CharSet.Auto)]
-    private static extern Int32 SendMessage(IntPtr hWnd, int msg,
-        int wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
-
-    [DllImport("user32.dll")]
-    private static extern bool SendMessage(IntPtr hwnd, int msg, int wParam, StringBuilder lParam);
+    private static extern IntPtr SendMessage(IntPtr hWnd, int msg,
+        IntPtr wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
     [DllImport("user32.dll")]
     private static extern bool GetComboBoxInfo(IntPtr hwnd, ref COMBOBOXINFO pcbi);
@@ -65,11 +62,11 @@ public static class Win32Utility
         if (control is ComboBox)
         {
             COMBOBOXINFO info = GetComboBoxInfo(control);
-            SendMessage(info.hwndItem, EM_SETCUEBANNER, 0, text);
+            SendMessage(info.hwndItem, EM_SETCUEBANNER, IntPtr.Zero, text);
         }
         else
         {
-            SendMessage(control.Handle, EM_SETCUEBANNER, 0, text);
+            SendMessage(control.Handle, EM_SETCUEBANNER, IntPtr.Zero, text);
         }
     }
 
@@ -85,7 +82,7 @@ public static class Win32Utility
 
     public static string GetCueText(Control control)
     {
-        StringBuilder builder = new StringBuilder();
+        var result = String.Empty;
         if (control is ComboBox)
         {
             COMBOBOXINFO info = new COMBOBOXINFO();
@@ -93,12 +90,12 @@ public static class Win32Utility
             //we want the textbox
             info.cbSize = Marshal.SizeOf(info);
             GetComboBoxInfo(control.Handle, ref info);
-            SendMessage(info.hwndItem, EM_GETCUEBANNER, 0, builder);
+            SendMessage(info.hwndItem, EM_GETCUEBANNER, IntPtr.Zero, result);
         }
         else
         {
-            SendMessage(control.Handle, EM_GETCUEBANNER, 0, builder);
+            SendMessage(control.Handle, EM_GETCUEBANNER, IntPtr.Zero, result);
         }
-        return builder.ToString();
+        return result;
     }
 }
