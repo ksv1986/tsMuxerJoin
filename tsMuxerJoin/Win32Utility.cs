@@ -26,7 +26,7 @@ using System.Text;
 
 public static class Win32Utility
 {
-    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
     private static extern IntPtr SendMessage(IntPtr hWnd, int msg,
         IntPtr wParam, [MarshalAs(UnmanagedType.LPWStr)] string lParam);
 
