@@ -2,6 +2,7 @@
 using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Taskbar;
 
 namespace tsMuxerJoin
 {
@@ -106,20 +107,32 @@ namespace tsMuxerJoin
                 muxer.EnableRaisingEvents = true;
                 muxer.Exited += new EventHandler(muxer_Exited);
                 muxer.Start();
+                TaskbarManager.Instance.SetProgressValue(0, 1);
+                TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Indeterminate);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, Properties.Resources.muxerExecFailed, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TaskbarManager.Instance.SetProgressValue(1, 1);
+                TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Error);
             }
         }
 
         private void muxer_Exited(object sender, EventArgs e)
         {
+            TaskbarManager.Instance.SetProgressValue(1, 1);
+
             Process muxer = sender as Process;
             if (muxer.ExitCode != 0)
+            {
                 MessageBox.Show(String.Format(Properties.Resources.muxerFailed, muxer.ExitCode), this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Error);
+            }
             else
+            {
                 Process.Start("explorer.exe", "/select," + output.DoubleQuote());
+                TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
+            }
         }
 
         private void mux_Click(object sender, EventArgs e)
